@@ -1,4 +1,4 @@
-spring:
+﻿spring:
   application:
     name: jdbc-study
   jackson:
@@ -9,7 +9,7 @@ spring:
   datasource:
     druid:
       username: root
-      password: life3145
+      password: ${DB_PASSWORD:CHANGE_ME}
       url: jdbc:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
       driver-class-name: com.mysql.cj.jdbc.Driver
       initial-size: 5

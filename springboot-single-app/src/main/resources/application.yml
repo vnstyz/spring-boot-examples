@@ -1,4 +1,4 @@
-spring:
+﻿spring:
   messages:
     basename: "messages"
     encoding: utf-8
