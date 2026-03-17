@@ -35,23 +35,9 @@ public class EmployeeController {
 
         // [MOD-PAGINATION] Provide page number list for Thymeleaf.
         long totalPages = employeePage.getPages();
-        List<Integer> pageNumbers = new ArrayList<>();
-        if (totalPages > 0) {
-            long current = employeePage.getCurrent();
-            int window = 7;
-            long half = window / 2;
-            long start = Math.max(1, current - half);
-            long end = Math.min(totalPages, current + half);
-            long actualWindow = end - start + 1;
-            if (actualWindow < window) {
-                long pad = window - actualWindow;
-                long shiftLeft = Math.min(pad, start - 1);
-                start -= shiftLeft;
-                pad -= shiftLeft;
-                end = Math.min(totalPages, end + pad);
-            }
-            pageNumbers = IntStream.rangeClosed((int) start, (int) end).boxed().toList();
-        }
+        List<Integer> pageNumbers = totalPages > 0
+                ? IntStream.rangeClosed(1, (int) totalPages).boxed().toList()
+                : new ArrayList<>();
         model.addAttribute("pageNumbers", pageNumbers);
         return "index";
     }

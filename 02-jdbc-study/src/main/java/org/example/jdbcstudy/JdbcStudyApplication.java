@@ -6,10 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @MapperScan("org.example.jdbcstudy.mapper")
-public class Application {
+public class JdbcStudyApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(JdbcStudyApplication.class, args);
     }
 
 }

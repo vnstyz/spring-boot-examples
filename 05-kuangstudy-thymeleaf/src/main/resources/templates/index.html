@@ -37,7 +37,7 @@
             <form id="batchDeleteForm" method="post"
                   th:action="@{/employee/batchDelete(pageNo=${page.current},pageSize=${page.size})}">
                 <div class="table-responsive">
-                    <table class="table table-hover align-middle mb-0">
+                    <table class="table table-hover align-middle text-center mb-0">
                         <thead>
                         <tr>
                             <th style="width: 40px;"><input class="form-check-input" type="checkbox" id="selectAll"></th>
@@ -108,15 +108,30 @@
                                 <a class="page-link" th:href="@{/(pageNo=${page.current - 1},pageSize=${page.size})}">上一页</a>
                             </li>
 
+                            <li class="page-item"
+                                th:classappend="${pageNumbers[0] > 1} ? '' : 'disabled invisible'">
+                                <a class="page-link" th:href="@{/(pageNo=1,pageSize=${page.size})}">1</a>
+                            </li>
+                            <li class="page-item disabled"
+                                th:classappend="${pageNumbers[0] > 2} ? '' : 'invisible'">
+                                <span class="page-link">...</span>
+                            </li>
+
                             <li class="page-item" th:each="n : ${pageNumbers}" th:classappend="${n == page.current} ? 'active'">
                                 <a class="page-link" th:text="${n}" th:href="@{/(pageNo=${n},pageSize=${page.size})}">1</a>
                             </li>
 
+                            <li class="page-item disabled"
+                                th:classappend="${pageNumbers[pageNumbers.size() - 1] < page.pages - 1} ? '' : 'invisible'">
+                                <span class="page-link">...</span>
+                            </li>
+                            <li class="page-item"
+                                th:classappend="${pageNumbers[pageNumbers.size() - 1] < page.pages} ? '' : 'disabled invisible'">
+                                <a class="page-link" th:href="@{/(pageNo=${page.pages},pageSize=${page.size})}">尾页</a>
+                            </li>
+
                             <li class="page-item" th:classappend="${page.current == page.pages} ? 'disabled'">
                                 <a class="page-link" th:href="@{/(pageNo=${page.current + 1},pageSize=${page.size})}">下一页</a>
-                            </li>
-                            <li class="page-item" th:classappend="${page.current == page.pages} ? 'disabled'">
-                                <a class="page-link" th:href="@{/(pageNo=${page.pages},pageSize=${page.size})}">尾页</a>
                             </li>
                         </ul>
                     </nav>
