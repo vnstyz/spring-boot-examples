@@ -26,6 +26,8 @@
         <module>05-kuangstudy-thymeleaf</module>
         <module>06-gateway-demo-to-5</module>
         <module>DemoTest</module>
+        <module>07-taobao-cloud</module>
+        <module>08-mysqlredis-test</module>
     </modules>
 
     <properties>

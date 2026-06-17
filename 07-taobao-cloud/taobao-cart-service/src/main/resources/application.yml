@@ -1,0 +1,26 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: taobao-cart-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/taobao_cloud?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    show-sql: false
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      database: 2
+
+# 远程服务地址配置，生产环境可改为网关或服务发现地址。
+taobao:
+  remote:
+    auth-base-url: http://localhost:8081
+    product-base-url: http://localhost:8082

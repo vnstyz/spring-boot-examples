@@ -1,0 +1,26 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: taobao-auth-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/taobao_cloud?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    show-sql: false
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      database: 0
+
+# JWT配置：密钥至少32位。
+taobao:
+  jwt:
+    secret: taobao-cloud-demo-secret-key-at-least-32-char
+    expire-hours: 12
