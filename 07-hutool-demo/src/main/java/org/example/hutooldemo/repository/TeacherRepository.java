@@ -1,0 +1,7 @@
+package org.example.hutooldemo.repository;
+
+import org.example.hutooldemo.entity.Teacher;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface TeacherRepository extends JpaRepository<Teacher, Long> {
+}
