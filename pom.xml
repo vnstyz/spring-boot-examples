@@ -19,13 +19,11 @@
     <modules>
         <module>diy-spring-boot-starter</module>
         <module>diy-spring-boot-starter-autoconfigure</module>
-        <module>springboot-single-app</module>
         <module>02-jdbc-study</module>
         <module>03-mybatisplus-study</module>
         <module>04-springmvc-study</module>
         <module>05-kuangstudy-thymeleaf</module>
         <module>06-gateway-demo-to-5</module>
-        <module>DemoTest</module>
         <module>07-taobao-cloud</module>
         <module>08-mysqlredis-test</module>
         <module>09-springboot-testdb</module>
