@@ -29,6 +29,7 @@
         <module>07-taobao-cloud</module>
         <module>08-mysqlredis-test</module>
         <module>09-springboot-testdb</module>
+        <module>01-java-start</module>
     </modules>
 
     <properties>
