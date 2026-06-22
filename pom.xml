@@ -28,6 +28,7 @@
         <module>DemoTest</module>
         <module>07-taobao-cloud</module>
         <module>08-mysqlredis-test</module>
+        <module>09-springboot-testdb</module>
     </modules>
 
     <properties>
